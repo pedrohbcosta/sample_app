@@ -7,7 +7,7 @@ require "active_support/inflector"
 guard :minitest, all_on_start: false do
   watch(%r{^test/(.*)/?(.*)_test\.rb$})
   watch('test/test_helper.rb') { 'test' }
-  watch('config/routes.rb') { interface_tests }
+  watch('config/routes.rb') { 'test' }
   watch(%r{app/views/layouts/*}) { interface_tests }
   watch(%r{^app/models/(.*?)\.rb$}) do |matches|
     ["test/models/#{matches[1]}_test.rb",
